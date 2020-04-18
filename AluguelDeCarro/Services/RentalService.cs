@@ -8,12 +8,13 @@ namespace AluguelDeCarro.Services
         public double PrincePerHour { get; private set; }
         public double PricePerDay { get; private set; }
 
-        private BrazilTaxService _brazilTaxService = new BrazilTaxService();
+        private ITaxService _taxService;
 
-        public RentalService(double princePerHour, double pricePerDay)
+        public RentalService(double princePerHour, double pricePerDay, ITaxService taxService)
         {
             PrincePerHour = princePerHour;
             PricePerDay = pricePerDay;
+            _taxService = taxService;
         }
 
         public void ProcessInvoice(CarRental carRental)

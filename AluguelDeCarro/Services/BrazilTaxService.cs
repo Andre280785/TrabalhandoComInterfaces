@@ -1,6 +1,6 @@
 ﻿namespace AluguelDeCarro.Services
 {
-    class BrazilTaxService
+    internal class BrazilTaxService : ITaxService
     {
         public double Tax(double amount)
         {
